@@ -1,0 +1,41 @@
+//
+//  main.cpp
+//  leap
+//
+//  Created by Iryna on 5/25/19.
+//  Copyright © 2019 Bob. All rights reserved.
+//
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+void base_num(int, int);
+int main() {
+
+    int num,base;
+    cout<<"Enter number and base with number"<<endl;
+    cin>>num>>base;
+    base_num(num,base);
+ 
+}
+
+void base_num(int num, int b){
+    vector<int> base;
+    int mode;
+    do{
+        mode=num%b;
+        num=num/b;
+        base.push_back(mode);
+        
+    }while(num!=0);
+    
+    
+    while(!base.empty()){
+        cout<<base.back();
+        base.pop_back();
+    }
+    cout<<endl;
+    
+}
